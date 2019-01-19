@@ -80,10 +80,27 @@ contains('booty', items, (trueOrFalse) => {
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
-  let result = [];
+  let result = array;
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  
-
+  for(let i = 0; i < array.length; i++){
+    for(let j = 1; j < result.length; j++){
+      if(array[i] === result[j]){
+        result.splice(j, 1);
+      }
+    }
+    return result;
+  }
 }
+
+function removeDuplicates(array,cb) {
+  let result = [...new Set(array)];
+  // removeDuplicates removes all duplicate values from the given array.
+  // Pass the duplicate free array to the callback function.
+  // Do not mutate the original array.
+  return cb(result);
+}
+
+let item = [1,2,2,3,3,3,4,5,6,7,7,7,7];
+console.log(removeDuplicates(item));
