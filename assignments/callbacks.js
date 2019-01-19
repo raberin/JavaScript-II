@@ -68,12 +68,10 @@ function contains(item, list, cb) {
     return false;
   }
 }
-
+//Contains solution #2
 function contains(item, list, cb) {
   return (list.includes(item)) ? cb(true) : false
 }
-
-
 
 contains('booty', items, (trueOrFalse) => {
   console.log(trueOrFalse);
