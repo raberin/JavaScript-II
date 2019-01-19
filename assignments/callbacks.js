@@ -57,6 +57,8 @@ multiplyNums(5,3, (product) => {
   console.log(product);
 });
 
+
+//Function Contains Solution #1
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
@@ -66,6 +68,12 @@ function contains(item, list, cb) {
     return false;
   }
 }
+
+function contains(item, list, cb) {
+  return (list.includes(item)) ? cb(true) : false
+}
+
+
 
 contains('booty', items, (trueOrFalse) => {
   console.log(trueOrFalse);
